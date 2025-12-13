@@ -24,7 +24,7 @@ const navbar = () => {
   return (
     <div className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-lg z-50">
       <div className=" w-full mx-auto px-6 py-2 flex justify-between items-center">
-        <div className="text-2xl font-bold flex gap-3">BigCheese <img  className="w-[35px]" src="/cheese.png" alt="." /></div>
+        <div className="text-2xl font-bold flex gap-3 ">BigCheese <img  className="w-[35px]" src="/cheese.png" alt="." /></div>
 
         {/* Nav Links */}
         <ul className=" flex space-x-8 text-sm font-medium align-middle items-center justify-center">
