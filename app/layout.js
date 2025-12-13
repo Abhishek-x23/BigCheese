@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "BigCheese",
   description: "This is the most relevant platform to get funded by your loved ones",
+   icons: {
+    icon: "/favicon-v2.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
