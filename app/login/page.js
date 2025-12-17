@@ -1,10 +1,27 @@
 "use client";
 
 import React from "react";
+import {useEffect} from "react";
 import GithubIcon from "@/components/githubIcon"
 import { Session ,signIn, signOut } from "next-auth/react";
+import { useSession} from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 
 const Page = () => {
+  const { data : session , status }= useSession()
+  const router = useRouter()
+
+  useEffect(()=>{  
+    if(session){
+      
+      router.push("/");
+    }
+  },[status,router])
+  
+  if(status==="loading"){
+    return<div className="h-full w-full bg-transparent opacity-50 text-center align-middle justify-centery text-5xl ">...loading</div>
+  }
   return (
     <div className="mt-20 z-10 flex flex-col justify-center items-center text-center">
       <div className="h-screen w-screen bg-gray-400">
