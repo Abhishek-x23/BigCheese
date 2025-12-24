@@ -18,9 +18,11 @@ const navbar = () => {
     return (
       <>
         <div className="container  bg-gray-900 w-full mx-auto px-6 py-2 flex justify-between items-center">
+           <Link href={"/"}>
            <div className="text-2xl font-bold flex gap-3 ">
           BigCheese <img className="w-[35px]" src="/cheese.png" alt="." />
         </div>
+           </Link>
 
 
 
@@ -58,7 +60,7 @@ const navbar = () => {
             <Link href={"/login"}>
               <button
                 type="button"
-                className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2"
+                className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2 text-center me-2 mb-2 "
               >
                 login
               </button>

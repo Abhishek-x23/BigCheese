@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import { User, Settings, HelpCircle, LogOut, DollarSign } from "lucide-react";
+import { User, Settings, HelpCircle, LogOut, DollarSign, Notebook } from "lucide-react";
 
 const Avatar = () => {
   const { data: session } = useSession();
@@ -38,7 +39,8 @@ const Avatar = () => {
 
           {/* Menu */}
           <div className="p-1 text-gray-500">
-            <MenuItem icon={<User size={16} />} label="View profile" />
+            <Link href={"/mypage"}><MenuItem icon={<User size={16} />} label="My Page" /></Link>
+            <Link href={"/dashboard"}><MenuItem icon={<Notebook size={16} />} label="Dashboard" /></Link>
             <MenuItem icon={<Settings size={16} />} label="Settings" />
             <MenuItem icon={<DollarSign size={16} />} label="Earnings" />
             <MenuItem icon={<HelpCircle size={16} />} label="Support" />
