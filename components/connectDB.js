@@ -1,17 +1,14 @@
-
 import mongoose from "mongoose";
 
-const connectDB = async ()=>{
-    try {
-        const conn = await mongoose.connect('mongodb://localhost:27017/BigCheese',{
-            useNewUrlParser : true ,
-        });
-        console.log(`MongoDB Connected : ${conn.connection.host}`);
+const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) return;
 
-    }
-    catch (error){
-        console.error (error.message);
-        process.exit(1);
-    }
-}
+  if (!process.env.MONGODB_URI) {
+    throw new Error("MONGODB_URI is not defined");
+  }
+
+  await mongoose.connect(process.env.MONGODB_URI);
+  console.log("MongoDB connected");
+};
+
 export default connectDB;

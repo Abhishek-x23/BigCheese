@@ -39,7 +39,7 @@ const Avatar = () => {
 
           {/* Menu */}
           <div className="p-1 text-gray-500">
-            <Link href={"/mypage"}><MenuItem icon={<User size={16} />} label="My Page" /></Link>
+            <Link href={`/profile/${session.user.name}`}><MenuItem icon={<User size={16} />} label="My Page" /></Link>
             <Link href={"/dashboard"}><MenuItem icon={<Notebook size={16} />} label="Dashboard" /></Link>
             <MenuItem icon={<Settings size={16} />} label="Settings" />
             <MenuItem icon={<DollarSign size={16} />} label="Earnings" />
