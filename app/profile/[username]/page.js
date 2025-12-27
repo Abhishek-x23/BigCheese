@@ -1,16 +1,13 @@
-"use client"
 import React from "react";
 import PaymentsPage from "@/components/PaymentsPage";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+const CreatorPage = async ({ params }) => {
+  const { username } = await params;
 
-const CreatorPage = ({params}) => {
-  const { data: session } = useSession();
-    
   return (
-   <>
-   <PaymentsPage params/>
-   </>
+    <>
+      <PaymentsPage username={username} />
+    </>
   );
 };
 
